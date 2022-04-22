@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.example.aspectexample.ClassToShowAspectExample;
 import com.example.beans.DinnerMeal;
 import com.example.beans.Movie;
 import com.example.beans.PrototypeBeanAndNotSingleton;
@@ -93,6 +94,11 @@ public class Example1 {
 		System.out.println(b); //prototype
 		System.out.println(c);
 		
+		
+		ClassToShowAspectExample dd = (ClassToShowAspectExample)context.getBean(ClassToShowAspectExample.class);
+		System.out.println(dd.getClass());//proxy object
+		dd.printSomething();
+		System.out.println(dd.getClass());
 		xxx.close();
 		context.close();
 

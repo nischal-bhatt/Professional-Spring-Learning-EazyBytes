@@ -3,6 +3,7 @@ package com.example.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Primary;
 
 import com.example.beans.Beer;
@@ -15,7 +16,8 @@ methods. So Spring container can process the class and generate Spring Beans
 to be used in the application.
 * */
 @Configuration
-@ComponentScan(basePackages="com.example.beans")
+@ComponentScan(basePackages={"com.example.beans","com.example.aspects","com.example.aspectexample"})
+@EnableAspectJAutoProxy
 public class ProjectConfig {
 
 
