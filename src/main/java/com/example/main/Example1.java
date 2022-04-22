@@ -8,6 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.example.beans.DinnerMeal;
 import com.example.beans.Movie;
+import com.example.beans.PrototypeBeanAndNotSingleton;
+import com.example.beans.PrototyperScoper;
 import com.example.beans.Song;
 import com.example.beans.Vehicle;
 import com.example.config.ProjectConfig;
@@ -75,10 +77,21 @@ public class Example1 {
 
 		DinnerMeal dm = (DinnerMeal)context.getBean("dinnermeal");
 		dm.displayBeer();
+		DinnerMeal dm2 = (DinnerMeal)context.getBean("dinnermeal");
 		
+		System.out.println(dm); //singleton
+		System.out.println(dm2);
 		ClassPathXmlApplicationContext xxx  = new ClassPathXmlApplicationContext("beans.xml");
 		Song songer = (Song)xxx.getBean("song1");
 		songer.printHelloWorld();
+		
+		PrototypeBeanAndNotSingleton a = (PrototypeBeanAndNotSingleton)context.getBean("ori");
+		
+		PrototyperScoper b = (PrototyperScoper)context.getBean(PrototyperScoper.class);
+		PrototyperScoper c = (PrototyperScoper)context.getBean(PrototyperScoper.class);
+		
+		System.out.println(b); //prototype
+		System.out.println(c);
 		
 		xxx.close();
 		context.close();
