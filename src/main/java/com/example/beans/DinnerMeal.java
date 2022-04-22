@@ -8,9 +8,12 @@ import org.springframework.stereotype.Component;
 public class DinnerMeal {
 
 	
+	
 	private final Beer beer;
 	
 	@Autowired
+	//here got autowired so 
+	//in Beer class dun autowire --> otherwise circular dependency
 	public DinnerMeal(@Qualifier(value="daaruwichpyaarz")Beer beer) {
 		
 		this.beer = beer;

@@ -3,12 +3,20 @@ package com.example.beans;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 //@Component
 @Service
 public class Movie {
 	private String name;
+
+	private final Tyre tyre;
+	
+	public Movie(@Qualifier("bose")Tyre tyre) {
+		
+		this.tyre = tyre;
+	}
 
 	public String getName() {
 		return name;
@@ -20,7 +28,8 @@ public class Movie {
 
 	public void printMovie()
 	{
-		System.out.println("movie name is " + this.name);
+		System.out.println("movie name is " + this.name+ " speaker is " );
+		this.tyre.sayName();
 	}
 	
 	@PostConstruct
