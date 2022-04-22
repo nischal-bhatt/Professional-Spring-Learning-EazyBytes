@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <bean id = "song1" class="com.example.beans.Song">
-   <property name="name" value="korean beer"/>
+   <property name="name" value="nachangi saari raat"/>
 </bean>
-
+<!-- hi -->
 </beans>

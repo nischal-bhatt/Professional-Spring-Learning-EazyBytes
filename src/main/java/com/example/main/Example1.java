@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.example.beans.DinnerMeal;
 import com.example.beans.Movie;
 import com.example.beans.Song;
 import com.example.beans.Vehicle;
@@ -72,6 +73,9 @@ public class Example1 {
 			System.out.println("selected false, program closing");
 		}
 
+		DinnerMeal dm = (DinnerMeal)context.getBean("dinnermeal");
+		dm.displayBeer();
+		
 		ClassPathXmlApplicationContext xxx  = new ClassPathXmlApplicationContext("beans.xml");
 		Song songer = (Song)xxx.getBean("song1");
 		songer.printHelloWorld();

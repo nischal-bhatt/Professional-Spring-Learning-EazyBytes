@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.example.beans.Beer;
 import com.example.beans.Vehicle;
 
 /*
@@ -46,6 +47,13 @@ public class ProjectConfig {
         return veh;
     }
 
+    @Bean(name = "beerla")
+    Beer Beer3() {
+        Beer beerboy = new Beer();
+        beerboy.setName("piminto");
+        return beerboy;
+    }
+    
     /*
     The method names usually follow verbs notation.But for methods
     which we will use to create beans, can use nouns as names.
