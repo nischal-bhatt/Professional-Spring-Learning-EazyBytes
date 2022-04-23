@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(1)
+//aop need to go thru again -- to make it clear
 public class LoggerAspect {
 
 	 private Logger logger = Logger.getLogger(LoggerAspect.class.getName());
